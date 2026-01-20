@@ -10,7 +10,7 @@ export default function MyBidsPage() {
   useEffect(() => {
     const fetchMyBids = async () => {
       setLoading(true)
-      const response = await fetch("http://localhost:5000/api/bids/my", {
+      const response = await fetch("https://freelance-hub-backend.vercel.app/api/bids/my", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

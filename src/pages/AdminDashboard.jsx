@@ -17,7 +17,7 @@ export default function AdminDashboard() {
     // Fetch all users
     const fetchUsers = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/users", {
+        const res = await fetch("https://freelance-hub-backend.vercel.app/api/users", {
           headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
         });
         if (!res.ok) throw new Error("Failed to fetch users");
@@ -33,7 +33,7 @@ export default function AdminDashboard() {
     // Optionally fetch disputes
     const fetchDisputes = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/disputes", {
+        const res = await fetch("https://freelance-hub-backend.vercel.app/api/disputes", {
           headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
         });
         if (!res.ok) return;

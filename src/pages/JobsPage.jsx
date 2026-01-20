@@ -54,7 +54,7 @@ export default function JobsPage() {
       }
       params.append("status", "open")
 
-      const res = await fetch(`http://localhost:5000/api/jobs?${params.toString()}`)
+      const res = await fetch(`https://freelance-hub-backend.vercel.app/api/jobs?${params.toString()}`)
       if (!res.ok) throw new Error("Failed to fetch jobs")
       
       const data = await res.json()

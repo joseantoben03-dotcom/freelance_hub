@@ -38,7 +38,7 @@ export default function DashboardPage() {
       const endpoint =
         user.role === "client" ? "/api/jobs/my-jobs" : "/api/jobs"
 
-      const res = await fetch(`http://localhost:5000${endpoint}`, {
+      const res = await fetch(`https://freelance-hub-backend.vercel.app${endpoint}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

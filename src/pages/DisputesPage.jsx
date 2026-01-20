@@ -34,8 +34,8 @@ export default function DisputesPage() {
       try {
         const endpoint =
           user?.role === "client"
-            ? "http://localhost:5000/api/jobs/my-jobs"
-            : "http://localhost:5000/api/jobs/my-projects"
+            ? "https://freelance-hub-backend.vercel.app/api/jobs/my-jobs"
+            : "https://freelance-hub-backend.vercel.app/api/jobs/my-projects"
 
         const res = await fetch(endpoint, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -57,7 +57,7 @@ export default function DisputesPage() {
   useEffect(() => {
     const fetchDisputes = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/disputes", {
+        const res = await fetch("https://freelance-hub-backend.vercel.app/api/disputes", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
 
@@ -88,7 +88,7 @@ export default function DisputesPage() {
     setError(null)
 
     try {
-      const res = await fetch("http://localhost:5000/api/disputes", {
+      const res = await fetch("https://freelance-hub-backend.vercel.app/api/disputes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

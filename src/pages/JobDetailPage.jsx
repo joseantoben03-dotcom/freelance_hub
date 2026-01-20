@@ -25,7 +25,7 @@ export default function JobDetailPage() {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(`http://localhost:5000/api/jobs/${id}`)
+    fetch(`https://freelance-hub-backend.vercel.app/api/jobs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setJob(data)
@@ -39,7 +39,7 @@ export default function JobDetailPage() {
 
   const fetchBids = () => {
     setBidLoading(true)
-    fetch(`http://localhost:5000/api/bids/job/${id}`, {
+    fetch(`https://freelance-hub-backend.vercel.app/api/bids/job/${id}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
       .then((res) => res.json())
@@ -61,7 +61,7 @@ export default function JobDetailPage() {
   const approveBid = async (bidId) => {
     setActionMsg("")
     try {
-      const res = await fetch(`http://localhost:5000/api/bids/${bidId}/approve`, {
+      const res = await fetch(`https://freelance-hub-backend.vercel.app/api/bids/${bidId}/approve`, {
         method: "PATCH",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
@@ -76,7 +76,7 @@ export default function JobDetailPage() {
   const payBid = async (bidId) => {
     setActionMsg("")
     try {
-      const res = await fetch(`http://localhost:5000/api/bids/${bidId}/pay`, {
+      const res = await fetch(`https://freelance-hub-backend.vercel.app/api/bids/${bidId}/pay`, {
         method: "PATCH",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
@@ -93,7 +93,7 @@ export default function JobDetailPage() {
     setBidError("")
     setBidSuccess(false)
     try {
-      const res = await fetch(`http://localhost:5000/api/bids`, {
+      const res = await fetch(`https://freelance-hub-backend.vercel.app/api/bids`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
